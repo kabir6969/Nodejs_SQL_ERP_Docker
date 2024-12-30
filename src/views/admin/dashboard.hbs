@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Foundation admin</title>
+<meta charset="UTF-8">
+<!-- Main CSS -->
+<link href="css/stylesds.css" rel="stylesheet">
+<!-- Foundation CSS -->
+<link href="stylesheets/foundation.min.css" rel="stylesheet">
+<!-- Font-awesome -->
+<link href="stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>Foundation admin</h1>
+
+<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <i class="fa fa-search" aria-hidden="true" type="button" data-toggle></i>
+    <div class="title-bar-title">Search</div>
+</div>
+
+<div class="top-bar" id="example-menu">
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button">Search</button></li>
+        </ul>
+    </div>
+</div>
+
+<div id="sidebar">
+    <h4>Manage center</h4>
+    <ul class="manage-menu text-center">
+        <!--<li><a ui-sref="admin.main"><i class="fa fa-home"></i></a></li>-->
+        <li><a href="dashboard.html"><i class="fa fa-home"></i></a></li>
+                <ul class="dropdown menu" data-dropdown-menu data-options="disableHover:true;clickOpen:true">
+            <li>
+            <a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                <ul class="menu">
+                <li><a href="pages/buttons.html">Buttons</a></li>
+                <li><a href="pages/forms.html">Forms</a></li>
+                <li><a href="pages/media.html">Media</a></li>
+                <li><a href="pages/tables.html">Tables</a></li>
+                </ul>
+            </li>
+        </ul>
+        <li><a href="pages/manage.html"><i class="fa fa-key"></i></a></li>
+        <li><a href="pages/add.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></a></li>
+        <li><a href="pages/item-details.html"><i class="fa fa-cube" aria-hidden="true"></i></a></li>
+        <li class="cart-msg">
+            <div class="row">
+                <div class="small-6 columns">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="warning badge">B</span>
+                </div>
+                <div class="small-6 columns">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <span class="warning badge">B</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="manage-wrapper">
+    <!--<button class="warning large button sidebar-toggle" role="button"><i class="fa fa-bell-o "></i></button>-->
+    <h2>Dashboard</h2>
+   
+        <div class="row">
+        <div class="large-6 columns">
+            <table class="dashboard-table hover show-for-medium">
+                <thead>
+                    <tr>
+                    <th width="200">Table Header</th>
+                    <th width="150">Table Header</th>
+                    <th width="150">Table Header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td><img class="thumbnail" src="img/sample_img.png" alt="white-lion"></td>
+                    <td>4</td>
+                    <td>S281EC</td>
+                    </tr>
+                    <tr>
+                    <td><img class="thumbnail" src="img/sample_img.png" alt="white-lion"></td>
+                    <td>4</td>
+                    <td>S281EC</td>
+                    </tr>
+                    <tr>
+                    <td><img class="thumbnail" src="img/sample_img.png" alt="white-lion"></td>
+                    <td>4</td>
+                    <td>S281EC</td>
+                    </tr>
+                </tbody>
+                </table>
+                <table class="show-for-small-only">
+                    <tr>
+                        <th>Table Header</th>
+                        <td><img class="thumbnail" src="img/sample_img.png" alt="white-lion"></td>
+                    </tr>
+                    <tr>
+                        <th>Table Header</th>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th>Table Header</th>
+                        <td>S281EC</td>
+                    </tr>
+                                        <tr>
+                        <th>Table Header</th>
+                        <td><img class="thumbnail" src="img/sample_img.png" alt="white-lion"></td>
+                    </tr>
+                    <tr>
+                        <th>Table Header</th>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th>Table Header</th>
+                        <td>S281EC</td>
+                    </tr>
+                                        <tr>
+                        <th>Table Header</th>
+                        <td><img class="thumbnail" src="img/sample_img.png" alt="white-lion"></td>
+                    </tr>
+                    <tr>
+                        <th>Table Header</th>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th>Table Header</th>
+                        <td>S281EC</td>
+                    </tr>
+                </table>
+            </div>
+        {{!-- <div class="large-4 columns">
+            <div id="graph">
+            </div>
+    </div> --}}
+
+
+</div>
+
+
+
+</body>
+</html>
+
+<!--#1 problem z h2 w <article> tresc strony nie jest wysrodkowana-->

@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  app:
+    image: kabirmca/erp_nodejs:latest # Image from Docker Hub
+    container_name: erp_nodejs_docker_hub
+    volumes:
+      - .:/backend/app           # Local folder bind mount to container directory
+      - erp_nodejs_volume_hub:/backend/data  # Named volume for persistent data (e.g., for database storage)
+    working_dir: /backend/app         # Set working directory in the container
+    ports:
+      - "3000:3000"                  # Map port 3000 on host to port 3000 in the container
+
+    networks:
+      - nodejs_custom_network  # Attach to custom network
+
+    command: ["npm", "run", "dev"]    # Start app with npm in dev mode
+    environment:
+      - NODE_ENV=development         # Set environment variable (optional)
+
+    deploy:
+      update_config:
+        order: start-first           # Ensures zero downtime during updates
+    pull_policy: always               # Always pull the latest image
+
+  postgres:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    ports: 
+      - "5432:5432"                  # Expose PostgreSQL port
+    environment:
+      POSTGRES_USER: root            # Username for PostgreSQL
+      POSTGRES_PASSWORD: root        # Password for PostgreSQL
+      POSTGRES_DB: root              # Database name
+
+    networks:
+      - nodejs_custom_network  # Attach to custom network
+
+  redis:
+    image: redis
+    container_name: redis_cache
+    ports:
+      - "6379:6379"                  # Map Redis port 6379
+    networks:
+      - nodejs_custom_network  # Attach to custom network
+
+volumes:
+  erp_nodejs_volume_hub:  # Named volume for app data
+    external: true  # Use an existing volume
+
+networks:
+  nodejs_custom_network:  # Define a custom network
+    driver: bridge
+    external: false  # Set to true if using a pre-existing network
+    #external: true
+    #internal: true
+    #aliases:
+    #  - my-app
+    #  - db-service
+
+   
